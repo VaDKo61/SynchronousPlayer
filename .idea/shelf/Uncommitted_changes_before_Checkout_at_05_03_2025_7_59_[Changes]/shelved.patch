@@ -1,0 +1,12 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/venv\r\n/data/Тестовое_задание_синхронизация_видео.docx\r\n
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 829fd99cb3abd1b81148b8b58f623dc2a6df2e25)
++++ b/.gitignore	(date 1741150526221)
+@@ -1,2 +1,2 @@
+ /venv
+-/data/Тестовое_задание_синхронизация_видео.docx
++/data
