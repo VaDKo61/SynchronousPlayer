@@ -1,28 +1,11 @@
-import cv2
-import os
+import sys
 
+from PySide6 import QtWidgets
 
-def create_capture():
-    pass
+from video_player import VideoPlayer
 
-
-def search_video():
-    video: tuple
-    for file in os.listdir(r'data'):
-        if file.endswith('.avi'):
-            video
-
-
-def save_frame(capture):
-    index = 0
-    while True:
-        ret, frame = capture.read()
-        if not ret:
-            break
-        cv2.imwrite(f"frame{index}.jpg", frame)
-        index += 1
-
-
-create_capture()
-capture = cv2.VideoCapture(r'data/1.avi')
-capture.release()
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    player = VideoPlayer()
+    player.show()
+    sys.exit(app.exec())
