@@ -21,16 +21,18 @@ class FrameGenerator:
 
         self.frame: list = [cv2.imread(f'data/1.jpg') for _ in range(len(self.time_iter))]
         self.current_time: float = self.min_time_frame - 0.2
+        self.long =math.ceil((self.max_time_frame - self.min_time_frame) / 0.2)
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        for _ in range(math.ceil((self.max_time_frame - self.min_time_frame) / 0.2)):
+        if self.long > 0:
             self.current_time += 0.2
             for i in range(len(self.frame)):
                 if self.time[i] <= self.current_time:
                     self.frame[i], self.time[i] = self.get_current_frame(i)
+            self.long -= 1
             return self.frame
         for i in range(len(self.frame)):
             self.capture[i].release()
