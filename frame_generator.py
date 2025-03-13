@@ -21,7 +21,7 @@ class FrameGenerator:
 
         self.frame: list = [cv2.imread(f'data/1.jpg') for _ in range(len(self.time_iter))]
         self.current_time: float = self.min_time_frame - 0.2
-        self.long =math.ceil((self.max_time_frame - self.min_time_frame) / 0.2)
+        self.long: int = math.ceil((self.max_time_frame - self.min_time_frame) / 0.2)
 
     def __iter__(self):
         return self
